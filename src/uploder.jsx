@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import {useUploadsList} from '@w3ui/react-uploads-list';
 
 export default function Uploader() {
-  const [progress, uploader] = useUploader();
+  const [uploader] = useUploader();
   const {reload} = useUploadsList();
 
   const onDrop = useCallback(
@@ -14,6 +14,8 @@ export default function Uploader() {
         console.log('Uploading file', file.path);
         const cid = await uploader.uploadFile(file);
         console.log('Uploaded! CID:', cid);
+
+        // Trigger a render of the uploads
         reload();
       }
 

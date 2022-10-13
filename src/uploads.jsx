@@ -15,9 +15,7 @@ export default function Uploads() {
     getUploads();
 
     async function getUploads() {
-      console.log('Refreshing uploads');
-      const a = await reload();
-      console.log(a);
+      reload();
     }
   }, [authStatus]);
 

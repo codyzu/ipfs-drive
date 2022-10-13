@@ -15,9 +15,12 @@ export default function Login() {
   } = useAuth();
 
   useEffect(() => {
-    console.log('loading identity');
+    if (authStatus !== AuthStatus.SignedOut) {
+      return;
+    }
+
     loadDefaultIdentity();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [authStatus, loadDefaultIdentity]);
 
   useEffect(() => {
     if (authStatus !== AuthStatus.SignedIn) {
