@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iconify-json/lucide": "^1.1.44",
+    "@unocss/preset-icons": "^0.45.29",
     "@unocss/reset": "^0.45.29",
     "@w3ui/react-uploader": "^2.0.0",
     "@w3ui/react-uploads-list": "^1.0.3",
     "@w3ui/react-wallet": "^1.0.2",
+    "clsx": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.2",
@@ -29,6 +32,7 @@
     "eslint-config-xo-react": "^0.27.0",
     "eslint-plugin-react": "^7.31.9",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1",
     "vite": "^3.1.0",
     "xo": "^0.52.4"
   }
