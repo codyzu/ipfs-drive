@@ -28,6 +28,7 @@ export default defineConfig({
         media: {
           portrait: '(max-aspect-ratio: 1/1)',
           short: '(max-height: 480px)',
+          // eslint-disable-next-line camelcase
           short_portrait: '(max-aspect-ratio: 1/1) and (max-height: 480px)',
         },
       },

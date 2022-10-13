@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "xo .",
+    "lint:fix": "xo --fix .",
+    "format": "prettier --check . '!**/*.{js,jsx,ts,tsx,cjs}'",
+    "format:fix": "prettier --write . '!**/*.{js,jsx,ts,tsx,cjs}'"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.1.44",
