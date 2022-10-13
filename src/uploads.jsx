@@ -12,11 +12,7 @@ export default function Uploads() {
       return;
     }
 
-    getUploads();
-
-    async function getUploads() {
-      reload();
-    }
+    reload();
   }, [authStatus]);
 
   useEffect(() => {
