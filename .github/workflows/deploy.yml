@@ -40,9 +40,10 @@ jobs:
           node-version: 18
           cache: 'pnpm'
       - name: Install and build
+        # set the base path to where this will be deployed
         run: |
           pnpm install
-          pnpm run build
+          pnpm run build --base=/ipfs-drive/
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
