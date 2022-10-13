@@ -46,7 +46,7 @@ export default function Uploader() {
       {isDragActive ? (
         <p>Drop the files here...</p>
       ) : (
-        <p>Drag files here or click to select files</p>
+        <p>Upload by dragging files here or click to select files</p>
       )}
     </div>
   );
