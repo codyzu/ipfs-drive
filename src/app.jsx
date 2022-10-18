@@ -1,5 +1,5 @@
 import React from 'react';
-import {useAuth} from '@w3ui/react-wallet';
+import {useAuth, AuthStatus} from '@w3ui/react-wallet';
 import Login from './login';
 import Uploader from './uploder';
 import Uploads from './uploads';
@@ -13,8 +13,12 @@ function App() {
       lg="mx-auto max-w-screen-lg"
     >
       <Login />
-      <Uploader authStatus={authStatus} />
-      <Uploads />
+      {authStatus === AuthStatus.SignedIn && (
+        <>
+          <Uploader authStatus={authStatus} />
+          <Uploads />
+        </>
+      )}
     </div>
   );
 }

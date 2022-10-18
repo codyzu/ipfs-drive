@@ -60,6 +60,13 @@ export default function Login() {
       ? 'Verify email'
       : 'Login';
 
+  const message =
+    authStatus === AuthStatus.SignedIn
+      ? `Signing principle: ${identity.signingPrincipal.did()}`
+      : authStatus === AuthStatus.EmailVerification
+      ? 'Check your email to verify the login...'
+      : 'Login to upload new files and view existing uploads...';
+
   return (
     <div className="rounded-lg shadow p-5 border-none">
       <form onSubmit={onSubmit}>
@@ -89,11 +96,7 @@ export default function Login() {
           </button>
         </div>
       </form>
-      {authStatus === AuthStatus.SignedIn && (
-        <div className="mt-4 break-words">
-          Signing principle: {identity.signingPrincipal.did()}
-        </div>
-      )}
+      <div className="mt-4 break-words">{message}</div>
     </div>
   );
 }
