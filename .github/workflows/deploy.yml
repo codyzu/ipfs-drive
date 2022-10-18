@@ -38,7 +38,7 @@ jobs:
         uses: actions/setup-node@v3.5.1
         with:
           node-version: 18
-          cache: 'pnpm'
+          cache: "pnpm"
       - name: Install and build
         # set the base path to where this will be deployed
         run: |
@@ -50,7 +50,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: 'dist'
+          path: "dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
