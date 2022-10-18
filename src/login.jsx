@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {useAuth, AuthStatus} from '@w3ui/react-wallet';
 import clsx from 'clsx';
 
@@ -30,6 +30,8 @@ export default function Login() {
 
     setEmail(identity.email);
   }, [identity, authStatus]);
+
+  const emailRef = useRef();
 
   function onSubmit(event_) {
     event_.preventDefault();
@@ -65,7 +67,7 @@ export default function Login() {
     authStatus === AuthStatus.SignedIn
       ? `Signing principle: ${identity.signingPrincipal.did()}`
       : authStatus === AuthStatus.EmailVerification
-      ? 'Check your email to verify the login...'
+      ? 'Check your email to verify the login (can take a minute or two)...'
       : 'Login to upload new files and view existing uploads...';
 
   return (
@@ -73,20 +75,27 @@ export default function Login() {
       <form onSubmit={onSubmit}>
         <div className="flex flex-row">
           <input
+            ref={emailRef}
             type="email"
             className={clsx(
-              'border-2 p-2 rounded-lg font-bold invalid:text-red-600 min-w-20 flex-grow-1 flex-shrink-1 transition-all duration-500 ease-linear',
+              'border-2 p-2 rounded-lg font-bold invalid:text-red-600 invalid:shadow-red-600 invalid:shadow-md min-w-20 flex-grow-1 flex-shrink-1 transition-all duration-500 ease-linear',
               authStatus === AuthStatus.SignedOut
                 ? 'text-gray-700'
                 : 'text-gray-500',
             )}
             value={email}
             disabled={authStatus !== AuthStatus.SignedOut}
+            placeholder="your@email.com"
             onChange={(event_) => setEmail(event_.target.value)}
           />
           <button
             type="submit"
             className="ml-2 rounded-lg text-white bg-gray-700 p-2 transition-all duration-500 ease-linear"
+            disabled={
+              email.length === 0 ||
+              (authStatus === AuthStatus.SignedOut &&
+                !emailRef.current?.validity?.valid)
+            }
           >
             <div className="flex flex-row items-center">
               <div>{buttonText}</div>
