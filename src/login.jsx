@@ -22,6 +22,7 @@ export default function Login() {
     loadDefaultIdentity();
   }, [authStatus, loadDefaultIdentity]);
 
+  // When loading the identity from storage, synchronize the email address
   useEffect(() => {
     if (authStatus !== AuthStatus.SignedIn) {
       return;
