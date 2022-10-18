@@ -62,6 +62,7 @@ export default function Uploads() {
     }
   }, [data]);
 
+  // CSS adapted from https://css-tricks.com/adaptive-photo-layout-with-flexbox/
   return (
     <div className="flex flex-col rounded-lg shadow pt-5 mt-8">
       <div className="text-center text-xl">
