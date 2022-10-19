@@ -67,7 +67,7 @@ export default function Login() {
     authStatus === AuthStatus.SignedIn
       ? `Signing principle: ${identity.signingPrincipal.did()}`
       : authStatus === AuthStatus.EmailVerification
-      ? 'Check your email to verify the login (can take a minute or two)...'
+      ? 'Check your email to verify the login (can take a minute or two after clicking on the link in the email)...'
       : 'Login to upload new files and view existing uploads...';
 
   return (

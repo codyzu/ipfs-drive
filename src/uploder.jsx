@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import {useUploadsList} from '@w3ui/react-uploads-list';
 
 export default function Uploader() {
-  const [uploader] = useUploader();
+  const [, uploader] = useUploader();
   const {reload} = useUploadsList();
 
   const onDrop = useCallback(
