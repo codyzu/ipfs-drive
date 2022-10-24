@@ -65,7 +65,7 @@ export default function Uploads() {
 
   // CSS adapted from https://css-tricks.com/adaptive-photo-layout-with-flexbox/
   return (
-    <div className="flex flex-col rounded-lg shadow pt-5 mt-8">
+    <div className="flex flex-col rounded-lg shadow pt-5 mt-8 overflow-hidden">
       <div className="text-center text-xl">
         Uploads: {uploads.length > 0 ? `${uploads.length} total` : 'none'}
       </div>
