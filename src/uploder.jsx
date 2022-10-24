@@ -1,29 +1,20 @@
-import React, {useCallback} from 'react';
-import {useUploader} from '@w3ui/react-uploader';
+import React, {useCallback, useState} from 'react';
 import {useDropzone} from 'react-dropzone';
 import clsx from 'clsx';
-import {useUploadsList} from '@w3ui/react-uploads-list';
+import UploadWithProvider from './upload';
 
 export default function Uploader() {
-  const [, uploader] = useUploader();
-  const {reload} = useUploadsList();
+  const [uploads, setUploads] = useState([]);
 
   const onDrop = useCallback(
     async (acceptedFiles) => {
-      async function uploadFile(file) {
-        console.log('Uploading file', file.path);
-        const cid = await uploader.uploadFile(file);
-        console.log('Uploaded! CID:', cid);
-
-        // Trigger a render of the uploads
-        reload();
-      }
-
-      for (const file of acceptedFiles) {
-        uploadFile(file);
-      }
+      const timestamp = new Date();
+      setUploads((previousUploads) => [
+        ...previousUploads,
+        ...acceptedFiles.map((file) => ({file, timestamp})),
+      ]);
     },
-    [uploader],
+    [setUploads],
   );
 
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop});
@@ -48,6 +39,14 @@ export default function Uploader() {
       ) : (
         <p>Upload by dragging files here or click to select files</p>
       )}
+      <div className="flex flex-row flex-wrap">
+        {uploads.map((upload) => (
+          <UploadWithProvider
+            key={`${upload.file.name}-${upload.timestamp}`}
+            file={upload.file}
+          />
+        ))}
+      </div>
     </div>
   );
 }
