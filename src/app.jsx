@@ -1,5 +1,5 @@
 import React from 'react';
-import {useAuth, AuthStatus} from '@w3ui/react-wallet';
+import {useAuth, AuthStatus} from '@w3ui/react-keyring';
 import Login from './login';
 import Uploader from './uploder';
 import Uploads from './uploads';

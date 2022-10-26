@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {useAuth, AuthStatus} from '@w3ui/react-wallet';
+import {useAuth, AuthStatus} from '@w3ui/react-keyring';
 import clsx from 'clsx';
 
 export default function Login() {
