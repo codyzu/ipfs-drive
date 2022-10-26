@@ -37,8 +37,8 @@ function Upload({file}) {
       title={cid || ''}
     >
       <div className="flex flex-row items-center text-lg">
-        <div className="i-lucide-file inline-block m-r-1" />
-        <div>{file.name}</div>
+        <div className="i-lucide-file inline-block m-r-1 flex-shrink-0" />
+        <div className="flex-shrink-1">{file.name}</div>
       </div>
       {uploadedCarChunks.map(({cid, size}) => (
         <div key={cid.toString()}>
