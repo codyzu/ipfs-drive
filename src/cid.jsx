@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Inspired from https://stackoverflow.com/a/42901044
 // eslint-disable-next-line react/prop-types
 export default function Cid({cid}) {
   const text = cid.toString();
