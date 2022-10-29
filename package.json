@@ -15,33 +15,33 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.1.47",
-    "@unocss/preset-icons": "^0.46.0",
-    "@unocss/reset": "^0.46.0",
-    "@w3ui/react-keyring": "^1.0.0",
-    "@w3ui/react-uploader": "^2.1.1",
-    "@w3ui/react-uploads-list": "^1.1.1",
+    "@iconify-json/lucide": "^1.1.49",
+    "@unocss/preset-icons": "^0.46.1",
+    "@unocss/reset": "^0.46.1",
+    "@w3ui/react-keyring": "^1.0.1",
+    "@w3ui/react-uploader": "^2.1.2",
+    "@w3ui/react-uploads-list": "^1.1.2",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
-    "unocss": "^0.46.0"
+    "unocss": "^0.46.1"
   },
   "devDependencies": {
-    "@types/react": "^18.0.22",
-    "@types/react-dom": "^18.0.7",
-    "@unocss/preset-attributify": "^0.46.0",
-    "@unocss/preset-uno": "^0.46.0",
-    "@unocss/transformer-attributify-jsx": "^0.46.0",
-    "@vitejs/plugin-react": "^2.1.0",
-    "@web3-storage/w3up-cli": "^1.11.1",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@unocss/preset-attributify": "^0.46.1",
+    "@unocss/preset-uno": "^0.46.1",
+    "@unocss/transformer-attributify-jsx": "^0.46.1",
+    "@vitejs/plugin-react": "^2.2.0",
+    "@web3-storage/w3up-cli": "^2.1.2",
     "eslint-config-xo-react": "^0.27.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "vite": "^3.1.8",
+    "vite": "^3.2.1",
     "xo": "^0.52.4"
   }
 }
