@@ -18,7 +18,7 @@ function Upload({file}) {
     async function upload() {
       try {
         const cid = await uploadFile(file);
-        console.log('Uploaded', file.name);
+        console.log('Uploaded', file.name, 'CID:', cid.toString());
         setCid(cid);
         // Reload the uploads list
         reload();
